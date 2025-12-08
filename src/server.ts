@@ -1,5 +1,3 @@
-// src/server.ts
-
 import http, { IncomingMessage, ServerResponse } from "http";
 import { URL } from "url";
 import { getBookingSummary } from "./bookingOrchestrator";

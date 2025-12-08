@@ -1,11 +1,9 @@
-// src/providers/shows.ts
-
 export interface Show {
   id: string;
   title: string;
   venueId: string;
   status: "ON_SALE" | "OFF_SALE" | "CANCELLED";
-  startTime?: string; // optional by spec
+  startTime?: string;
 }
 export async function getShow(showId: string): Promise<Show> {
   if (showId === "lion-king-london-ev") {

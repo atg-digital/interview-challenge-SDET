@@ -1,10 +1,8 @@
-// src/providers/seatmap.ts
-
 export interface Seat {
   section: string;
   row: string;
   seatNumber: string;
-  restrictedView?: boolean; // optional, defaults to false
+  restrictedView?: boolean;
 }
 
 export async function getSeatmap(venueId: string): Promise<Seat[]> {

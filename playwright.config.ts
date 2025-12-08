@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
     reuseExistingServer: true,
   },
 
-  workers: 1, // avoids port conflict
+  workers: 1,
 };
 
 export default config;
