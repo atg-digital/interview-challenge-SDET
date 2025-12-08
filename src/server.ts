@@ -12,7 +12,6 @@ function sendJson(res: ServerResponse, status: number, body: unknown) {
 }
 
 export function createServer() {
-  // #cycode_sast_ignore_here this is only used for an SDET interview challenge and not production
   const server = http.createServer(
     async (req: IncomingMessage, res: ServerResponse) => {
       if (!req.url || !req.method) {
