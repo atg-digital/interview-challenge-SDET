@@ -12,6 +12,7 @@ function sendJson(res: ServerResponse, status: number, body: unknown) {
 }
 
 export function createServer() {
+  // #cycode_sast_ignore_here this is only used for an SDET interview challenge and not production
   const server = http.createServer(
     async (req: IncomingMessage, res: ServerResponse) => {
       if (!req.url || !req.method) {
@@ -53,8 +54,6 @@ if (require.main === module) {
   const port = 3001;
 
   server.listen(port, () => {
-    console.log(
-      `Server listening on https://localhost:${port}/booking/summary`
-    );
+    console.log(`Server listening on http://localhost:${port}/booking/summary`);
   });
 }
