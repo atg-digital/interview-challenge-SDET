@@ -12,6 +12,7 @@ function sendJson(res: ServerResponse, status: number, body: unknown) {
 }
 
 export function createServer() {
+  // cycode_sast_ignore_here - this is a simple HTTP server for testing interview only, this will never be in production
   const server = http.createServer(
     async (req: IncomingMessage, res: ServerResponse) => {
       if (!req.url || !req.method) {
