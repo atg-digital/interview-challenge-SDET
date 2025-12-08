@@ -19,7 +19,7 @@ export function createServer() {
       }
 
       const method = req.method.toUpperCase();
-      const url = new URL(req.url, "http://localhost"); 
+      const url = new URL(req.url, "http://localhost");
       const path = url.pathname;
 
       if (method === "GET" && path === "/booking/summary") {
@@ -53,6 +53,8 @@ if (require.main === module) {
   const port = 3001;
 
   server.listen(port, () => {
-    console.log(`Server listening on http://localhost:${port}/booking/summary`);
+    console.log(
+      `Server listening on https://localhost:${port}/booking/summary`
+    );
   });
 }
