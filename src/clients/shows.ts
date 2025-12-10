@@ -6,7 +6,7 @@ export interface Show {
   startTime?: string;
 }
 export async function getShow(showId: string): Promise<Show> {
-  if (showId === "lion-king-london-ev") {
+  if (showId === "lion-king-london") {
     return {
       id: "lion-king-london-ev",
       title: "The Lion King",

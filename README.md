@@ -4,8 +4,9 @@ Thanks for taking a look at this small project. Before the interview, all we’d
 
 - Get the project running locally
 - Have a quick look around the code
-- Spend a little time understanding the **`bookingOrchestrator`** function
+- Spend a little time understanding the **`bookingOrchestrator`** function 
 - Get a feel for how the clients and booking flow work
+- Get a feel for how the function is being hosted
 
 **We do not want you to write any code or tests beforehand.**
 Just be familiar enough that the project isn’t completely new when we start pairing.
@@ -34,7 +35,8 @@ Again, **you don’t need to write anything before the interview** — just get 
 ```
 src/
   bookingOrchestrator.ts     # Main booking orchestration logic
-  server.ts                  # Minimal HTTP wrapper exposing the endpoint
+  server.ts                  # Express server exposing the endpoint
+  handler.ts                 # Express route handler for the endpoint
   providers/
     shows.ts                 # Mock Shows Service
     seatmap.ts               # Mock Seatmap Service
@@ -50,9 +52,9 @@ tests/
 
 This project exposes one main HTTP endpoint:
 
-### **GET /booking/summary?showId={id}**
+### **GET /booking/summary?showId={id}&seatIds={ids}**
 
-Example: `GET /booking/summary?showId=lion-king-london`
+Example: `GET /booking/summary?showId=lion-king-london&seatIds=STALLS-A-10,CIRCLE-B-5`
 
 This endpoint pulls together data from three internal “services”:
 
@@ -120,21 +122,14 @@ npm test:jest
 ```
 
 **Run API Tests**  
- To execute the API test suite, use:
+ To execute the Playwright API test suite, use:
 
 ```bash
-npm test:api
-```
-
-**Run Integration Tests**  
- To execute the API test suite, use:
-
-```bash
-npm test:integration
+npm test:playwright
 ```
 
 **Run All Test Suites**  
- To execute the API test suite, use:
+ To execute all test suites, use:
 
 ```bash
 npm test

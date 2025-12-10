@@ -1,29 +1,20 @@
+import { Seat } from "./seatmap";
+
 export interface PricingItem {
   seatId: string;
   price: number;
-  fees?: number; 
+  fees?: number;
   total: number;
 }
 
 export interface PricingQuote {
   currency: string;
-  items: PricingItem[];
+  total: number;
 }
 
-export type PricingStrategy = "STANDARD" | "PREVIEW" | "LOTTERY";
-
-export async function getPricingQuote(params: {
-  showId: string;
-  seatIds: string[];
-  pricingStrategy: PricingStrategy;
-}): Promise<PricingQuote> {
+export async function getPricingQuote(seats: Seat[]): Promise<PricingQuote> {
   return {
     currency: "GBP",
-    items: params.seatIds.map((seatId) => ({
-      seatId,
-      price: 65,
-      fees: 4.5,
-      total: 69.5,
-    })),
+    total: seats.reduce((sum: number, seat: Seat) => sum + seat.price.total, 0),
   };
 }
