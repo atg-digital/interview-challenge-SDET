@@ -1,0 +1,28 @@
+name: Run PR checks
+on:
+    pull_request:
+    workflow_dispatch:
+
+# if this branch is pushed back to back, cancel the older branch's workflow
+concurrency:
+    group: ${{ github.ref }} && ${{ github.workflow }}
+    cancel-in-progress: true
+
+jobs:
+    pr-check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: lts/*
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run Unit Tests
+              run: npm run test:unit
+
+            - name: Run API Tests
+              run: npm run test:api
