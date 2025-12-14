@@ -12,7 +12,7 @@ export async function getShow(showId: string): Promise<Show> {
       title: "The Lion King",
       venueId: "lyceum-london",
       status: "ON_SALE",
-      startTime: "2025-12-24T19:30:00Z",
+      startTime: "2025-12-24T19:30:00Z"
     };
   }
 
@@ -20,6 +20,6 @@ export async function getShow(showId: string): Promise<Show> {
     id: showId,
     title: "Mystery Show",
     venueId: "unknown-venue",
-    status: "OFF_SALE",
+    status: "OFF_SALE"
   };
 }

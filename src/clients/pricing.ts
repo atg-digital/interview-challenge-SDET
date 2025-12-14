@@ -15,6 +15,6 @@ export interface PricingQuote {
 export async function getPricingQuote(seats: Seat[]): Promise<PricingQuote> {
   return {
     currency: "GBP",
-    total: seats.reduce((sum: number, seat: Seat) => sum + seat.price.total, 0),
+    total: seats.reduce((sum: number, seat: Seat) => sum + seat.price.total, 0)
   };
 }

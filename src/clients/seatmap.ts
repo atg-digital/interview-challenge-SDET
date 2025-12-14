@@ -21,8 +21,8 @@ const seatmapCache: { [key: string]: { seats: Seat[] } } = {
         price: {
           price: 65,
           fees: 4.5,
-          total: 69.5,
-        },
+          total: 69.5
+        }
       },
       {
         section: "CIRCLE",
@@ -31,17 +31,14 @@ const seatmapCache: { [key: string]: { seats: Seat[] } } = {
         price: {
           price: 65,
           fees: 4.5,
-          total: 69.5,
-        },
-      },
-    ],
-  },
+          total: 69.5
+        }
+      }
+    ]
+  }
 };
 
-export async function getSeatsById(
-  venueId: string,
-  seatIds: string[]
-): Promise<Seat[]> {
+export async function getSeatsById(venueId: string, seatIds: string[]): Promise<Seat[]> {
   const venueSeatmap = seatmapCache[venueId];
 
   if (venueSeatmap) {
