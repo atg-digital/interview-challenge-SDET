@@ -21,10 +21,7 @@ export interface BookingSummary {
   total: PricingQuote;
 }
 
-export async function getBookingSummary(
-  showId: string,
-  seatIds: string[]
-): Promise<BookingSummary> {
+export async function getBookingSummary(showId: string, seatIds: string[]): Promise<BookingSummary> {
   const show: Show = await getShow(showId);
   const seats: Seat[] = await getSeatsById(show.venueId, seatIds);
   const pricing: PricingQuote = await getPricingQuote(seats);
@@ -35,6 +32,6 @@ export async function getBookingSummary(
     venueId: show.venueId,
     startTime: show.startTime ?? null,
     seats: seats,
-    total: pricing,
+    total: pricing
   };
 }

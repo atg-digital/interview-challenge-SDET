@@ -8,9 +8,7 @@ router.get("/booking/summary", async (req: Request, res: Response) => {
   const seatIds = req.query.seatIds as string[];
 
   if (!showId || !seatIds) {
-    return res
-      .status(400)
-      .json({ error: "showId or seatIds query param is required" });
+    return res.status(400).json({ error: "showId or seatIds query param is required" });
   }
 
   try {
