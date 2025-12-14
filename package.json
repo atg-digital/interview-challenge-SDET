@@ -9,6 +9,7 @@
     "build": "tsc",
     "start": "npm run build && node dist/src/server.js",
     "test:api": "playwright test",
+    "test:ui": "playwright test --ui",
     "test:unit": "jest tests/unit --runInBand"
   },
   "keywords": [],
