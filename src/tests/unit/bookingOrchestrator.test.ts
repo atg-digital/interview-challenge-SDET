@@ -2,7 +2,7 @@ import { getBookingSummary } from "../../bookingOrchestrator";
 
 describe("getBookingSummary (unit)", () => {
   it("returns a booking summary for a known show", async () => {
-    const result = getBookingSummary("lion-king-london-ev", [
+    const result = await getBookingSummary("lion-king-london", [
       "STALLS-A-10",
       "CIRCLE-B-5",
     ]);
